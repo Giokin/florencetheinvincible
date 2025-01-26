@@ -1,0 +1,134 @@
+[gd_scene load_steps=19 format=3 uid="uid://b3esyby3es8u3"]
+
+[ext_resource type="Texture2D" uid="uid://daquwx3408s2e" path="res://Assets/Mobs/Legacy Enemy - Wild Boar/Legacy Enemy - Wild Boar/Run/Run-Sheet - Color 2.png" id="1_skfll"]
+[ext_resource type="Texture2D" uid="uid://d1y44a7gnpjb0" path="res://Assets/Mobs/Legacy Enemy - Wild Boar/Legacy Enemy - Wild Boar/Walk/Walk-Sheet - Color 2.png" id="2_8rsgt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2j26"]
+atlas = ExtResource("1_skfll")
+region = Rect2(0, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tke2w"]
+atlas = ExtResource("1_skfll")
+region = Rect2(96, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2yhn"]
+atlas = ExtResource("1_skfll")
+region = Rect2(192, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ju4te"]
+atlas = ExtResource("1_skfll")
+region = Rect2(288, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rohbb"]
+atlas = ExtResource("1_skfll")
+region = Rect2(384, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jy2lu"]
+atlas = ExtResource("1_skfll")
+region = Rect2(480, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_assd7"]
+atlas = ExtResource("2_8rsgt")
+region = Rect2(0, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfm16"]
+atlas = ExtResource("2_8rsgt")
+region = Rect2(96, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmdet"]
+atlas = ExtResource("2_8rsgt")
+region = Rect2(192, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sipfp"]
+atlas = ExtResource("2_8rsgt")
+region = Rect2(288, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qc7po"]
+atlas = ExtResource("2_8rsgt")
+region = Rect2(384, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xda3w"]
+atlas = ExtResource("2_8rsgt")
+region = Rect2(480, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_av6pf"]
+atlas = ExtResource("2_8rsgt")
+region = Rect2(576, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sai7s"]
+atlas = ExtResource("2_8rsgt")
+region = Rect2(672, 0, 96, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0fscv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2j26")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tke2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2yhn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ju4te")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rohbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jy2lu")
+}],
+"loop": true,
+"name": &"Charge",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_assd7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfm16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmdet")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sipfp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qc7po")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xda3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_av6pf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sai7s")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xthj3"]
+size = Vector2(57, 46)
+
+[node name="Wild Boar" type="Node"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(3, 0)
+scale = Vector2(0.9375, 1)
+sprite_frames = SubResource("SpriteFrames_0fscv")
+animation = &"Charge"
+autoplay = "Walk"
+frame_progress = 0.193589
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(3.5, 9)
+shape = SubResource("RectangleShape2D_xthj3")
