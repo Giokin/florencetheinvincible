@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://bl0suhqoy8017"]
+[gd_scene load_steps=6 format=4 uid="uid://bl0suhqoy8017"]
 
 [ext_resource type="PackedScene" uid="uid://1k3p7cn7p6si" path="res://Scenes/Sprites/PlayerCharacter.tscn" id="1_6trh2"]
 [ext_resource type="Texture2D" uid="uid://dtrdliupd2thk" path="res://Assets/LegacyFantasy/Legacy Fantasy - Forgotten Cemetery/Legacy Fantasy - Forgotten Cemetery/Assets/Tiles.png" id="2_cbvbo"]
+[ext_resource type="Texture2D" uid="uid://d1sbvqgtmgkh2" path="res://Assets/Smaller Assets/SpikeTrap.png" id="3_w50bd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_333xk"]
 texture = ExtResource("2_cbvbo")
@@ -384,3 +385,7 @@ tile_map_data = PackedByteArray("AAAAAAIAAAAKAAwAAAABAAIAAAAKAAwAAAACAAIAAAAKAAw
 tile_set = SubResource("TileSet_2vi4l")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_6trh2")]
+
+[node name="SpikeTrap" type="Sprite2D" parent="."]
+position = Vector2(152, 39)
+texture = ExtResource("3_w50bd")
