@@ -125,9 +125,8 @@ size = Vector2(57, 46)
 position = Vector2(3, 0)
 scale = Vector2(0.9375, 1)
 sprite_frames = SubResource("SpriteFrames_0fscv")
-animation = &"Charge"
+animation = &"Walk"
 autoplay = "Walk"
-frame_progress = 0.193589
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(3.5, 9)
