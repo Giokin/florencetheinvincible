@@ -739,15 +739,13 @@ script = ExtResource("4_mx6lr")
 [node name="BoarAnimations" type="AnimatedSprite2D" parent="Boar"]
 position = Vector2(426, 4)
 sprite_frames = SubResource("SpriteFrames_pt4ks")
-animation = &"Charge1"
+animation = &"Walk"
 speed_scale = 3.0
 
-[node name="BoarCollider" type="CollisionShape2D" parent="Boar"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boar"]
 position = Vector2(424, 7)
 shape = SubResource("RectangleShape2D_xntcs")
 
-[node name="BoarRayCast" type="RayCast2D" parent="Boar"]
+[node name="RayCast2D" type="RayCast2D" parent="Boar"]
 position = Vector2(425, 12)
-target_position = Vector2(-596, 0)
-
-[node name="AgroTimer" type="Timer" parent="Boar"]
+target_position = Vector2(-831, -1)
