@@ -1,5 +1,6 @@
-[gd_scene load_steps=35 format=3 uid="uid://draekobue7kli"]
+[gd_scene load_steps=40 format=3 uid="uid://draekobue7kli"]
 
+[ext_resource type="Script" path="res://Scripts/boar_warrior.gd" id="1_kvya8"]
 [ext_resource type="Texture2D" uid="uid://c3jfe6qf4op73" path="res://Assets/Mobs/Legacy Enemy - Boar Warrior/Attack/Attack-01-Sheet-Black.png" id="1_uxxj0"]
 [ext_resource type="Texture2D" uid="uid://xikd7tv8y2mf" path="res://Assets/Mobs/Legacy Enemy - Boar Warrior/Die/Die-Sheet-Black.png" id="2_6yi78"]
 [ext_resource type="Texture2D" uid="uid://b3oqf7jy7mu6e" path="res://Assets/Mobs/Legacy Enemy - Boar Warrior/Idle/Idle-Sheet-Back.png" id="3_ikq6a"]
@@ -227,16 +228,28 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ruqgk"]
 size = Vector2(60, 62)
 
-[node name="Boar Warrior" type="Node"]
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_yaren"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[sub_resource type="BTSelector" id="BTSelector_qc1g7"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[sub_resource type="BehaviorTree" id="BehaviorTree_x7b4w"]
+blackboard_plan = SubResource("BlackboardPlan_yaren")
+root_task = SubResource("BTSelector_qc1g7")
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_odfn3"]
+
+[node name="Boar Warrior" type="CharacterBody2D"]
+script = ExtResource("1_kvya8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_s0tsc")
-animation = &"walk"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.991789
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(6, 1)
 shape = SubResource("RectangleShape2D_ruqgk")
+
+[node name="BTPlayer" type="BTPlayer" parent="."]
+behavior_tree = SubResource("BehaviorTree_x7b4w")
+blackboard_plan = SubResource("BlackboardPlan_odfn3")
